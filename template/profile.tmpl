@@ -59,20 +59,18 @@
 				{{ if .account.Note }}
 				{{emojify .account.Emojis (noescape .account.Note)}}
 				{{else}}
-				This GoToSocial user hasn't written a bio yet!
+				no bio
 				{{end}}
 			</div>
 
 			<div class="fields">
 				{{ range .account.Fields }}
-				<div class="field">
-					<b>{{emojify $.account.Emojis (noescape .Name)}}</b>
-					<span>{{emojify $.account.Emojis (noescape .Value)}}</span>
-				</div>
+				<b>{{emojify $.account.Emojis (noescape .Name)}}</b>
+				<span>{{replace 'https?://' '' {{emojify $.account.Emojis (noescape .Value)}} }}</span>
 				{{ end }}
 			</div>
 
-			<div class="accountstats" aria-hidden="true">
+			<div class="accountstats">
 				<b>Joined</b><time datetime="{{.account.CreatedAt}}">{{.account.CreatedAt | timestampVague}}</time>
 				<b>Posts</b><span>{{.account.StatusesCount}}</span>
 				<b>Followed by</b><span>{{.account.FollowersCount}}</span>
@@ -89,7 +87,7 @@
 			<section class="thread">
 				{{ range .pinned_statuses }}
 				<article class="toot expanded" id="{{.ID}}">
-					{{ template "status.tmpl" .}}
+					{{ template "status_profile.tmpl" .}}
 				</article>
 				{{ end }}
 			</section>
@@ -110,7 +108,7 @@
 				{{ else }}
 				{{ range .statuses }}
 				<article class="toot expanded" id="{{.ID}}">
-					{{ template "status.tmpl" .}}
+					{{ template "status_profile.tmpl" .}}
 				</article>
 				{{ end }}
 				{{ end }}
