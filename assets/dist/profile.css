@@ -257,11 +257,20 @@
 .profile .about-user .fields {
 		background: var(--profile-bg);
 		display: grid;
-		grid-template: max-content 1fr;
-		padding: 0 0.5rem;
+		grid-template-columns: 6rem auto;
 	}
 
-.profile .about-user .fields .field + .field {
+.profile .about-user .fields > * {
+		padding: 0.5rem;
+	}
+.profile .about-user .fields > b {
+				align-self: flex-end;
+				justify-self: center;
+			}
+.profile .about-user .fields > span {
+			}
+.profile .about-user .fields > span + b,
+.profile .about-user .fields > span + b + span {
 				border-top: 0.1rem solid var(--gray2);
 			}
 
@@ -272,10 +281,10 @@
 
 .profile .about-user .accountstats {
 		background: var(--bg-accent);
-		padding: 1rem;
+		padding: 0.5rem;
 
 		display: grid;
-		grid-template-columns: auto auto;
+		grid-template-columns: 6rem auto;
 		gap: 0.5rem 1rem;
 	}
 .profile .about-user .accountstats > b {

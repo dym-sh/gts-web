@@ -16,10 +16,20 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */ -}}
+{{- /*
+		NESTED TEMPLATE DECLARATIONS
+		If some if/else macro is used multiple times, declare it once here instead.
+		When invoking these nested templates, remember to pass in the values passed
+		to the executing template, ie., use '{{ template "example" . }}' not
+		'{{ template "example" }}', otherwise you'll end up with empty variables.
+*/ -}}
+{{ define "thumbnailType" }}{{ if .instance.ThumbnailType }}{{ .instance.ThumbnailType }}{{ else }}image/png{{ end }}{{ end }}
+{{ define "instanceTitle" }}{{ if .ogMeta }}{{ .ogMeta.Title }}{{ else }}{{ .instance.Title }} - GoToSocial{{ end }}{{ end }}
 
+{{- /*
+		BOILERPLATE GOES HERE
+*/ -}}
 <!DOCTYPE html>
-
-<!-- header.tmpl -->
 <html lang="en">
 
 <head>

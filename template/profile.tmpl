@@ -66,15 +66,15 @@
 			<div class="fields">
 				{{ range .account.Fields }}
 				<b>{{emojify $.account.Emojis (noescape .Name)}}</b>
-				<span>{{replace 'https?://' '' {{emojify $.account.Emojis (noescape .Value)}} }}</span>
+				<span>{{emojify $.account.Emojis (noescape .Value)}}</span>
 				{{ end }}
 			</div>
 
 			<div class="accountstats">
-				<b>Joined</b><time datetime="{{.account.CreatedAt}}">{{.account.CreatedAt | timestampVague}}</time>
-				<b>Posts</b><span>{{.account.StatusesCount}}</span>
-				<b>Followed by</b><span>{{.account.FollowersCount}}</span>
-				<b>Following</b><span>{{.account.FollowingCount}}</span>
+				<b>join</b><time datetime="{{.account.CreatedAt}}">{{.account.CreatedAt | timestampVague}}</time>
+				<b>posts</b><span>{{.account.StatusesCount}}</span>
+				<b>follows</b><span>{{.account.FollowingCount}}</span>
+				<b>followers</b><span>{{.account.FollowersCount}}</span>
 			</div>
 		</section>
 
