@@ -25,7 +25,6 @@
 */ -}}
 {{ define "thumbnailType" }}{{ if .instance.ThumbnailType }}{{ .instance.ThumbnailType }}{{ else }}image/png{{ end }}{{ end }}
 {{ define "instanceTitle" }}{{ if .ogMeta }}{{ .ogMeta.Title }}{{ else }}{{ .instance.Title }} - GoToSocial{{ end }}{{ end }}
-
 {{- /*
 		BOILERPLATE GOES HERE
 */ -}}
@@ -35,7 +34,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width">
 	<meta name="robots" content="{{ if .robotsMeta }}{{ .robotsMeta }}{{ else }}noindex, nofollow{{ end }}">
 	{{ if .ogMeta }}{{ if .ogMeta.Locale }}
 	<meta name="og:locale" content="{{ .ogMeta.Locale }}">
