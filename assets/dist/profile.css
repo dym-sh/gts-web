@@ -1,4 +1,3 @@
-
 /*
 	GoToSocial
 	Copyright (C) 2021-2023 GoToSocial Authors admin@gotosocial.org
@@ -78,9 +77,9 @@
 		grid-template-columns: var(--avatar-size) auto 1fr;
 		grid-template-rows: var(--overlap) var(--name-size) auto;
 		grid-template-areas:
-			"avatar . ."
-			"avatar displayname displayname"
-			"avatar username role";
+			" avatar  .            .            .     "
+			" avatar  displayname  displayname  stats "
+			" avatar  username     role         stats ";
 
 		margin: 1rem;
 		margin-top: calc(-1 * var(--overlap));
@@ -156,9 +155,10 @@
 			grid-template-columns: auto 1fr;
 			grid-template-rows: var(--avatar-size) var(--name-size) auto;
 			grid-template-areas:
-				"avatar avatar"
-				"displayname displayname"
-				"username role";
+				" avatar       avatar      "
+				" displayname  displayname "
+				" username     role        "
+				" stats        stats       ";
 		}
 
 			.profile .header .basic-info .displayname {
@@ -220,6 +220,7 @@
 
 .profile .toots .toot {
 		border-radius: 0;
+		padding-top: 0;
 	}
 
 .profile .toots .toot .info {
@@ -257,20 +258,20 @@
 .profile .about-user .fields {
 		background: var(--profile-bg);
 		display: grid;
-		grid-template-columns: 6rem auto;
+		grid-template-columns: auto auto;
+		padding: 0.5rem;
 	}
 
 .profile .about-user .fields > * {
 		padding: 0.5rem;
 	}
 .profile .about-user .fields > b {
-				align-self: flex-end;
-				justify-self: center;
+				align-self: center;
+				justify-self: flex-end;
 			}
 .profile .about-user .fields > span {
 			}
-.profile .about-user .fields > span + b,
-.profile .about-user .fields > span + b + span {
+.profile .about-user .fields > span + b {
 				border-top: 0.1rem solid var(--gray2);
 			}
 
@@ -279,18 +280,20 @@
 		padding: 1rem;
 	}
 
-.profile .about-user .accountstats {
-		background: var(--bg-accent);
-		padding: 0.5rem;
-
+.profile .accountstats {
+		grid-area: stats;
 		display: grid;
-		grid-template-columns: 6rem auto;
-		gap: 0.5rem 1rem;
+		grid-auto-flow: column;
+		grid-template: repeat(2, 1fr) / repeat(4, auto);
+		gap: 0 1rem;
+		align-self: center;
 	}
-.profile .about-user .accountstats > b {
-	justify-self: end;
-	font-weight: normal;
-}
-.profile .about-user .accountstats > b + * {
-	justify-self: start;
+
+.profile .accountstats > * {
+		padding: 0.5rem;
+		justify-self: center;
+	}
+
+.profile .accountstats > b {
+	border-bottom: 0.1rem solid var(--gray2);
 }

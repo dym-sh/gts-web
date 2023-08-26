@@ -48,7 +48,15 @@
 				{{ end }}
 			</div>
 			{{ end }}
+
+			<div class="accountstats">
+				<b>joined</b><time datetime="{{.account.CreatedAt}}">{{.account.CreatedAt | timestampVague}}</time>
+				<b>posts</b><span>{{.account.StatusesCount}}</span>
+				<b>followers</b><span>{{.account.FollowersCount}}</span>
+				<b>follows</b><span>{{.account.FollowingCount}}</span>
+			</div>
 		</div>
+
 	</div>
 
 	<div class="column-split">
@@ -70,12 +78,6 @@
 				{{ end }}
 			</div>
 
-			<div class="accountstats">
-				<b>join</b><time datetime="{{.account.CreatedAt}}">{{.account.CreatedAt | timestampVague}}</time>
-				<b>posts</b><span>{{.account.StatusesCount}}</span>
-				<b>follows</b><span>{{.account.FollowingCount}}</span>
-				<b>followers</b><span>{{.account.FollowersCount}}</span>
-			</div>
 		</section>
 
 		<section class="toots">
@@ -97,7 +99,7 @@
 				<h2 id="recent" tabindex="-1">Recent posts</h2>
 				{{ if .rssFeed }}
 				<a href="{{ .rssFeed }}" class="rss-icon" aria-label="RSS feed">
-					<i class="fa fa-rss-square" aria-hidden="true"></i>
+					<img src="/rss.svg" width="24" height="24">
 				</a>
 				{{ end }}
 			</div>
