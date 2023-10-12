@@ -323,24 +323,12 @@ summary {
 	display: list-item;
 }
 
-/* noto-sans-regular - latin */
-
-/* standard border radius for nice squircles */
-
-/* border radius for items that are framed/bordered
-   inside something with $br, eg avatar, header img */
-
-/* Fork-Awesome 'fa-fw' fixed icon width 
-   keep in sync with https://github.com/ForkAwesome/Fork-Awesome/blob/a99579ae3e735ee70e51ed62dfcee3172b5b2db7/css/fork-awesome.css#L50
-*/
-
 html, body {
 	padding: 0;
 	margin: 0;
 	background: var(--bg);
 	color: var(--fg);
 	font-family: "Noto Sans", sans-serif;
-	scrollbar-color: var(--orange1) var(--gray3);
 }
 
 body {
@@ -567,7 +555,7 @@ section.error pre {
 	}
 
 section.oob-token code {
-		background: var(--gray1);
+		background: var(--gray2);
 		padding: 0.5rem;
 		margin: 0;
 		border-radius: 0.3rem;
@@ -683,7 +671,7 @@ footer a {
 		padding: .6rem;
 		font-weight: bold;
 		background-color: var(--border-accent);
-		color: var(--gray1);
+		color: var(--gray2);
 	}
 
 label {
@@ -714,7 +702,7 @@ label {
 
 .list .header {
 		border: 0.1rem solid transparent !important; /* for alignment with .entry border padding */
-		background: var(--gray1) !important;
+		background: var(--gray2) !important;
 		display: flex;
 		font-weight: bold;
 	}

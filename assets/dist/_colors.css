@@ -1,20 +1,18 @@
 
 :root {
-	--white1: #fafaff;
-	--white2: #b3b5c6;
-	--gray1: #2a2b2f;
-	--gray2: #35363b;
-	--gray3: #3a3b41;
-	--gray4: #45464e;
-	--gray5: #4d4e56;
-	--gray6: #575861;
-	--gray7: #5d5e67;
-	--gray8: #696a75;
+	--white1: #fff;
+	--white2: #777;
+	--gray1: #111;
+	--gray2: #222;
+	--gray3: #333;
+	--gray4: #444;
+	--gray5: #555;
+	--gray6: #666;
 	--orange1: #fd6a00;
 	--orange2: #ff853e;
 	--blue1: #3a9fde;
 	--blue2: #66befe;
-	--blue3: #89caff;
+	--blue3: #82d8fd;
 	--error1: #860000;
 	--error2: #ff9796;
 	--error3: #dd2c2c;
@@ -24,16 +22,16 @@
 	--info-bg: #b3ddff;
 	--info-link: var(--error-link);
 	--fg: var(--white1);
-	--bg: var(--gray1);
+	--bg: var(--gray2);
 	--bg-trans: rgba(77, 78, 86, 0.62);
-	--bg-accent: var(--gray5);
+	--bg-accent: var(--gray3);
 	--fg-accent: var(--blue3);
 	--fg-reduced: var(--white2);
 	--border-accent: var(--orange2);
 	--link-fg: var(--fg-accent);
 	--role-admin: var(--orange2);
 	--role-mod: var(--blue2);
-	--profile-bg: var(--gray4);
+	--profile-bg: var(--gray3);
 	--button-bg: var(--blue2);
 	--button-fg: var(--gray1);
 	--button-hover-bg: var(--blue3);
@@ -42,15 +40,15 @@
 	--button-danger-hover-bg: var(--error2);
 	--toot-bg: var(--gray3);
 	--toot-info-bg: var(--gray2);
-	--toot-focus-bg: var(--gray5);
-	--toot-focus-info-bg: var(--gray4);
+	--toot-focus-bg: var(--gray3);
+	--toot-focus-info-bg: var(--gray3);
 	--no-img-desc-bg: var(--orange1);
 	--no-img-desc-fg: var(--gray1);
 	--bg-sensitive: var(--gray1);
 	--boxshadow: 0 0.4rem 1rem -0.1rem rgba(0,0,0,0.15);
 	--boxshadow-border: 0.08rem solid var(--gray1);
 	--avatar-border: var(gray);
-	--input-bg: var(--gray4);
+	--input-bg: var(--gray3);
 	--input-disabled-bg: var(--gray2);
 	--input-border: var(--blue1);
 	--input-error-border: var(--error3);
@@ -66,14 +64,14 @@
 	--error-bg: var(--error2);
 	--list-entry-bg: var(--gray2);
 	--list-entry-alternate-bg: var(--gray3);
-	--list-entry-hover-bg: var(--gray4);
+	--list-entry-hover-bg: var(--gray3);
 	--plyr-color-main: var(--orange2);
 	--plyr-video-background: var(--bg-accent);
 	--plyr-badge-background: var(--bg-accent);
 	--plyr-video-controls-background: var(--bg-accent);
 	--plyr-badge-text-color: var(--fg);
 	--plyr-badge-border-radius: var(--br);
-	--plyr-video-progress-buffered-background: var(--gray8)
+	--plyr-video-progress-buffered-background: var(--gray6)
 }
 
 /*

@@ -221,7 +221,7 @@ nav.menu-tree li.nested a.title {
 			padding-left: 1rem;
 			font-weight: normal;
 			color: var(--fg);
-			background: var(--gray4);
+			background: var(--gray3);
 		}
 
 nav.menu-tree li.nested a.title:focus {

@@ -126,18 +126,16 @@
 .profile .header .basic-info .role {
 			background: var(--bg);
 			color: var(--fg);
-			border: 0.13rem solid var(--bg);
 
-			grid-area: role;
-			align-self: center;
-			justify-self: start;
-			border-radius: var(--br);
-			padding: 0.3rem;
-
-			line-height: 1.1rem;
-			font-size: 0.9rem;
-			font-variant: small-caps;
-			font-weight: bold;
+		  border: 0.1rem solid var(--bg);
+		  grid-area: role;
+		  align-self: center;
+		  justify-self: start;
+		  border-radius: var(--br);
+		  padding: 0.25rem 0.5rem 0.35rem 0.5rem;
+		  line-height: 0.75rem;
+		  font-size: 0.75rem;
+		  font-variant: small-caps;
 		}
 
 .profile .header .basic-info .role.admin {
@@ -202,12 +200,7 @@
 			justify-self: end;
 		}
 
-.profile .toots .col-header .rss-icon {
-			display: block;
-			margin: -0.25rem 0;
-		}
-
-.profile .toots .col-header .rss-icon .fa {
+.profile .rss-icon .fa {
 				font-size: 2rem;
 				-o-object-fit: contain;
 				   object-fit: contain;
@@ -272,7 +265,7 @@
 .profile .about-user .fields > span {
 			}
 .profile .about-user .fields > span + b {
-				border-top: 0.1rem solid var(--gray2);
+				border-top: 0.1rem solid var(--gray1);
 			}
 
 .profile .about-user .bio {
@@ -292,10 +285,17 @@
 .profile .accountstats > * {
 		padding: 0.5rem;
 		justify-self: center;
+	}
+
+.profile .accountstats > *,
+.profile .accountstats > * > * {
 		justify-content: center;
 		text-align: center;
+		display: flex;
+		gap: 0.25rem;
+		line-height: 20px;
 	}
 
 .profile .accountstats > b {
-	border-bottom: 0.1rem solid var(--gray2);
+	border-bottom: 0.1rem solid var(--gray1);
 }

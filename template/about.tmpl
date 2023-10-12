@@ -26,23 +26,22 @@
 		</div>
 
 		<div>
-			<h2>contacts</h2>
-			{{if .instance.ContactAccount}}
+			<h2>social profiles</h2>
+
 			<div class="account-card">
 				<img class="avatar" src="{{.instance.ContactAccount.Avatar}}" alt="" />
 				<h3>
 					{{if .instance.ContactAccount.DisplayName}}{{emojify .instance.ContactAccount.Emojis (escape .instance.ContactAccount.DisplayName)}}{{else}}{{.instance.ContactAccount.Username}}{{end}}
 				</h3>
-				<span>
-				<a href="{{.instance.ContactAccount.URL}}">@{{.instance.ContactAccount.Username}}</a>
-
-				{{if .instance.Email}}
-					| &lt;<a href="mailto:{{.instance.Email}}">{{.instance.Email}}</a>&gt;
-				{{end}}
-				</span>
-
+				<span><a href="{{.instance.ContactAccount.URL}}">@{{.instance.ContactAccount.Username}}</a></span>
 			</div>
-			{{end}}
+
+			<ul>
+				<li><a href="https://figma.com/@dym_sh">figma</a></li>
+				<li><a href="https://codepen.io/dym-sh">codepen</a></li>
+				<li><a href="https://indieweb.org/User:Dym.sh">indieweb</a></li>
+				<li><a href="mailto:re@dym.sh">email</a></li>
+			</ul>
 		</div>
 
 		<div>
@@ -50,7 +49,7 @@
 			<ul>
 				<li><a href="https://gotosocial.org" target="_blank">GoToSocial</a></li>
 				<li>official <a href="https://github.com/superseriousbusiness/gotosocial" target="_blank">source code</a></li>
-				<li>my <a href="https://source.garden/styles/gts-web" target="_blank">custom templates</a></li>
+				<li>my <a href="https://source.garden/config/gts-web" target="_blank">custom templates</a></li>
 			</ul>
 		</div>
 
@@ -96,7 +95,7 @@
 		</div>
 
 		<div>
-			<h2>statis</h2>
+			<h2>stats</h2>
 				<ul>
 					<li>Users: <span class="count">{{.instance.Stats.user_count}}</span></li>
 					<li>Posts: <span class="count">{{.instance.Stats.status_count}}</span></li>

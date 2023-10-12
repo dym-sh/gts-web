@@ -51,7 +51,14 @@
 
 			<div class="accountstats">
 				<b>joined</b><time datetime="{{.account.CreatedAt}}">{{.account.CreatedAt | timestampVague}}</time>
-				<b>posts</b><span>{{.account.StatusesCount}}</span>
+				<b>posts</b><span>
+					{{ if .rssFeed }}
+					<a href="{{ .rssFeed }}" class="rss-icon" aria-label="RSS feed">
+						<img src="/rss.svg" width="20" height="20">
+					</a>
+					{{ end }}
+					<span>{{.account.StatusesCount}}</span>
+				</span>
 				<b>followers</b><span>{{.account.FollowersCount}}</span>
 				<b>follows</b><span>{{.account.FollowingCount}}</span>
 			</div>
@@ -94,15 +101,6 @@
 				{{ end }}
 			</section>
 			{{ end }}
-
-			<div class="col-header">
-				<h2 id="recent" tabindex="-1">Recent posts</h2>
-				{{ if .rssFeed }}
-				<a href="{{ .rssFeed }}" class="rss-icon" aria-label="RSS feed">
-					<img src="/rss.svg" width="24" height="24">
-				</a>
-				{{ end }}
-			</div>
 
 			<section class="thread">
 				{{ if not .statuses }}

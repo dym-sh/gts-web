@@ -83,15 +83,11 @@
 <aside class="info">
 	<time datetime="{{.CreatedAt}}" title="{{.CreatedAt}}">{{.CreatedAt | timestampPrecise}}</time>
 	<div class="stats" role="group">
+		{{if .RepliesCount | eq 0 | not}}
 		<div>
 			<span>{{.RepliesCount}} {{if .RepliesCount | eq 1}}reply{{else}}replies{{end}}</span>
 		</div>
-		<div>
-			<span>{{.FavouritesCount}} favourite{{if .FavouritesCount | eq 1 | not}}s{{end}}</span>
-		</div>
-		<div>
-			<span>{{.ReblogsCount}} boost{{if .ReblogsCount | eq 1 | not}}s{{end}}</span>
-		</div>
+		{{end}}
 		{{if .Pinned}}
 		<div>
 			<span>pinned</span>
