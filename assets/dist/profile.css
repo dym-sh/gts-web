@@ -54,7 +54,7 @@
 			width: 100%;
 			height: 100%;
 			-o-object-fit: cover;
-			   object-fit: cover;
+			object-fit: cover;
 		}
 
 .profile .header {
@@ -101,7 +101,7 @@
 				height: 100%;
 				width: 100%;
 				-o-object-fit: cover;
-				   object-fit: cover;
+				object-fit: cover;
 			}
 
 .profile .header .basic-info .displayname {
@@ -120,22 +120,22 @@
 			font-weight: bold;
 			color: var(--fg-accent);
 			-webkit-user-select: all;
-			        user-select: all;
+			user-select: all;
 		}
 
 .profile .header .basic-info .role {
 			background: var(--bg);
 			color: var(--fg);
 
-		  border: 0.1rem solid var(--bg);
-		  grid-area: role;
-		  align-self: center;
-		  justify-self: start;
-		  border-radius: var(--br);
-		  padding: 0.25rem 0.5rem 0.35rem 0.5rem;
-		  line-height: 0.75rem;
-		  font-size: 0.75rem;
-		  font-variant: small-caps;
+			border: 0.1rem solid var(--bg);
+			grid-area: role;
+			align-self: center;
+			justify-self: start;
+			border-radius: var(--br);
+			padding: 0.25rem 0.5rem 0.35rem 0.5rem;
+			line-height: 0.75rem;
+			font-size: 0.75rem;
+			font-variant: small-caps;
 		}
 
 .profile .header .basic-info .role.admin {
@@ -164,19 +164,6 @@
 			}
 }
 
-.profile .col-header {
-	display: flex;
-	justify-content: start;
-	gap: 2rem;
-	align-items: center;
-
-	margin: 0;
-	background: var(--profile-bg);
-	border-top-left-radius: var(--br);
-	border-top-right-radius: var(--br);
-	padding: 0.75rem;
-}
-
 .profile .col-header h1, .profile .col-header h2 {
 		font-size: 1.2rem;
 		line-height: 1.3rem;
@@ -203,7 +190,7 @@
 .profile .rss-icon .fa {
 				font-size: 2rem;
 				-o-object-fit: contain;
-				   object-fit: contain;
+				object-fit: contain;
 				vertical-align: middle;
 				color: var(--orange2);
 				/* can't size a single-color background, so we use a linear-gradient that's effectively white */
@@ -212,18 +199,12 @@
 			}
 
 .profile .toots .toot {
-		border-radius: 0;
-		padding-top: 0;
+		border-radius: var(--br);
 	}
-
-.profile .toots .toot .info {
-			padding: 0.3rem 0.75rem;
-		}
-
-.profile .toots .toot:last-child {
-			border-bottom-left-radius: var(--br);
-			border-bottom-right-radius: var(--br);
-		}
+.toot .info {
+	  flex-direction: row;
+	  gap: 1rem;
+	}
 
 .profile .toots .backnextlinks {
 		display: flex;
@@ -265,7 +246,7 @@
 .profile .about-user .fields > span {
 			}
 .profile .about-user .fields > span + b {
-				border-top: 0.1rem solid var(--gray1);
+				border-top: 0.1rem solid var(--gray2);
 			}
 
 .profile .about-user .bio {
@@ -297,5 +278,5 @@
 	}
 
 .profile .accountstats > b {
-	border-bottom: 0.1rem solid var(--gray1);
+	border-bottom: 0.1rem solid var(--gray2);
 }

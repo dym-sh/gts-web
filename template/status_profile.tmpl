@@ -80,19 +80,11 @@
 	{{end}}
 </section>
 
-<aside class="info">
+<a data-nosnippet href="{{.URL}}" class="toot-link info">
 	<time datetime="{{.CreatedAt}}" title="{{.CreatedAt}}">{{.CreatedAt | timestampPrecise}}</time>
-	<div class="stats" role="group">
-		{{if .RepliesCount | eq 0 | not}}
-		<div>
-			<span>{{.RepliesCount}} {{if .RepliesCount | eq 1}}reply{{else}}replies{{end}}</span>
-		</div>
-		{{end}}
-		{{if .Pinned}}
-		<div>
-			<span>pinned</span>
-		</div>
-		{{end}}
-	</div>
-</aside>
-<a data-nosnippet href="{{.URL}}" class="toot-link">Open thread</a>
+	{{if .Pinned}}
+	<span>/pinned</span>
+	{{end}}{{if .RepliesCount | eq 0 | not}}
+	<span>replies:{{.RepliesCount}}</span>
+	{{end}}
+</a>

@@ -17,19 +17,37 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */ -}}
 
-<section class="author">
-	<a href="{{.Account.URL}}">
-		<img class="avatar" src="{{.Account.Avatar}}" alt="">
-		<span class="displayname">
-			{{if .Account.DisplayName}}
-			{{emojify .Account.Emojis (escape .Account.DisplayName)}}
-			{{else}}
-			{{.Account.Username}}
-			{{end}}
+<section class="meta">
+	<a href="{{.Account.URL}}" class="author">
+		<img class="avatar" src="{{.Account.Avatar}}" alt="" align="left" width="48" height="48">
+		<span class="user-info">
+			<span class="displayname">
+				{{if .Account.DisplayName}}
+				{{emojify .Account.Emojis (escape .Account.DisplayName)}}
+				{{else}}
+				{{.Account.Username}}
+				{{end}}
+			</span>
+			<span class="username">@{{.Account.Username}}</span>
 		</span>
-		<span class="username">@{{.Account.Username}}</span>
+	</a>
+
+	<a data-nosnippet href="{{.URL}}" class="toot-link info">
+		<time datetime="{{.CreatedAt}}" title="{{.CreatedAt}}">{{.CreatedAt | timestampPrecise}}</time>
+		<div class="stats">
+			{{if .RepliesCount | eq 0 | not}}
+			<span>replies: {{.RepliesCount}}</span>
+			{{end}}{{if .FavouritesCount | eq 0 | not}}
+			<span>favs: {{.FavouritesCount}}</span>
+			{{end}}{{if .ReblogsCount | eq 0 | not}}
+			<span>reposts: {{.ReblogsCount}}</span>
+			{{end}}{{if .Pinned}}
+			<span>/pinned</span>
+			{{end}}
+		</div>
 	</a>
 </section>
+
 <section class="body">
 	<div class="text">
 		{{if .SpoilerText}}
@@ -92,24 +110,3 @@
 	</div>
 	{{end}}
 </section>
-
-<aside class="info">
-	<time datetime="{{.CreatedAt}}" title="{{.CreatedAt}}">{{.CreatedAt | timestampPrecise}}</time>
-	<div class="stats" role="group">
-		<div>
-			<span>{{.RepliesCount}} {{if .RepliesCount | eq 1}}reply{{else}}replies{{end}}</span>
-		</div>
-		<div>
-			<span>{{.FavouritesCount}} favourite{{if .FavouritesCount | eq 1 | not}}s{{end}}</span>
-		</div>
-		<div>
-			<span>{{.ReblogsCount}} boost{{if .ReblogsCount | eq 1 | not}}s{{end}}</span>
-		</div>
-		{{if .Pinned}}
-		<div>
-			<span>pinned</span>
-		</div>
-		{{end}}
-	</div>
-</aside>
-<a data-nosnippet href="{{.URL}}" class="toot-link">Open thread</a>

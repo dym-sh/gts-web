@@ -347,6 +347,9 @@ body {
 	grid-template-columns: 1fr minmax(auto, 50rem) 1fr;
 	grid-template-columns: 1fr min(92%, 50rem) 1fr;
 	grid-template-rows: auto 1fr auto;
+
+	gap: 1rem;
+  padding: 1rem 0;
 }
 
 h1 {
@@ -610,8 +613,6 @@ hr {
 
 footer {
 	align-self: end;
-	padding: 2rem 0 1rem 0;
-
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
