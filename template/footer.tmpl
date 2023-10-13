@@ -17,12 +17,16 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */ -}}
 
-		<!-- footer.tmpl -->
-		</div>
-		<footer>
-			<a href="/about" class="nounderline">About this Instance</a>
-		</footer>
-	</div>
+	<footer>
+	  <div class="buttons round">
+	    <a href="/about/"
+	      class="bg-icon"
+	      title="about"
+	      ><span class="hidden">about</span>
+	    </a>
+	  </div>
+	</footer>
+
 	{{ if .javascript }}
 	{{ range .javascript }}
 		<script src="{{.}}"></script>
