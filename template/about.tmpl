@@ -18,22 +18,22 @@
 */ -}}
 {{ template "header.tmpl" .}}
 <main class="about">
-	<h1>instance</h1>
+	<h1>fediverse</h1>
 	<div>
-		{{.instance.Description |noescape}}
+		{{.instance.Description | noescape}}
 	</div>
 
 	<h2>social profiles</h2>
 	<ul>
-		<li><a rel="me" href="{{.instance.ContactAccount.URL}}">microblog</a></li>
-		<li><a rel="me" href="https://photon.lemmy.world/profile/user">lemmy</a></li>
-		<li><a rel="me" href="https://figma.com/@dym_sh">figma</a></li>
-		<li><a rel="me" href="https://codepen.io/dym-sh">codepen</a></li>
-		<li><a rel="me" href="https://indieweb.org/User:Dym.sh">indieweb</a></li>
-		<li><a rel="me" href="mailto:re@dym.sh">email</a></li>
+		<li><a href="https://dym.sh/@dym">microblog</a></li>
+		<li><a href="https://lemmy.world/u/dym_sh">lemmy</a></li>
+		<li><a href="https://figma.com/@dym_sh">figma</a></li>
+		<li><a href="https://codepen.io/dym-sh">codepen</a></li>
+		<li><a href="https://indieweb.org/User:Dym.sh">indieweb</a></li>
+		<li><a href="mailto:re@dym.sh">email</a></li>
 	</ul>
 
-	<h2>fediverse server software</h2>
+	<h2>server software</h2>
 	<ul>
 		<li><a href="https://gotosocial.org" target="_blank">GoToSocial</a></li>
 		<li>official <a href="https://github.com/superseriousbusiness/gotosocial" target="_blank">source code</a></li>

@@ -15,7 +15,7 @@
 //
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/ -}}{{ define "thumbnailType" }}{{ if .instance.ThumbnailType }}{{ .instance.ThumbnailType }}{{ else }}image/png{{ end }}{{ end }}{{ define "instanceTitle" }}{{ if .ogMeta }}{{ .ogMeta.Title }}{{ else }}{{ .instance.Title }} - GoToSocial{{ end }}{{ end
+*/ -}}{{ define "thumbnailType" }}{{ if .instance.ThumbnailType }}{{ .instance.ThumbnailType }}{{ else }}image/png{{ end }}{{ end }}{{ define "instanceTitle" }}{{ if .ogMeta }}{{ .ogMeta.Title }}{{ else }}{{ .instance.Title }}{{ end }}{{ end
 }}<!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +61,15 @@
 	<link rel="stylesheet" href="/assets/dist/base.css">
 	{{range .stylesheets}}
 	<link rel="stylesheet" href="{{.}}">
-	{{end}}<title>{{ if .ogMeta }}{{ .ogMeta.Title }}{{ else }}{{.instance.Title}} - GoToSocial{{ end }}</title>
+	{{end}}<title>{{ if .ogMeta }}{{ .ogMeta.Title }}{{ else }}{{.instance.Title}}{{ end }}</title>
+
+	<link rel="me" href="mailto:re@dym.sh">
+	<link rel="me" href="@dym@dym.sh">
+	<link rel="me" href="https://dym.sh/@dym">
+	<link rel="me" href="https://lemmy.world/u/dym_sh">
+	<link rel="me" href="https://figma.com/@dym_sh">
+	<link rel="me" href="https://codepen.io/dym-sh">
+	<link rel="me" href="https://indieweb.org/User:Dym.sh">
 </head>
 
 <body>
