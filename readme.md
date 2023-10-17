@@ -4,4 +4,6 @@
 
 as seen on my fediverse profile ( https://dym.sh/@dym ):
 
-![screenshot](./screenshot.png)
+![profile](./profile.png)
+
+![about](./about.png)
