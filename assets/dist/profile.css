@@ -9,166 +9,101 @@
 
 	This program is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 	GNU Affero General Public License for more details.
 
 	You should have received a copy of the GNU Affero General Public License
-	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-.page {
-	grid-template-columns: 1fr minmax(auto, 60rem) 1fr; /* fallback for lack of min() support */
-	grid-template-columns: 1fr min(92%, 65rem) 1fr;
+.profile {
+	display: flex;
+	gap: 1rem;
+}
+.profile .header {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	justify-content: flex-start;
+	width: 20rem;
+	word-break: break-all;
 }
 
-.profile {
-	padding: 0.5rem;
+.profile .header > * {
 	border-radius: var(--br);
 }
 
-.profile .column-split {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1rem;
-	}
-
-.profile .header {
-	background: var(--profile-bg);
+.profile figure {
+	margin: 0 0 0.5rem 0;
 	border-radius: var(--br);
 	overflow: hidden;
-	margin-bottom: 1rem;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+.profile figure img.bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	object-fit: cover;
 }
 
-.profile .header .header-image {
-		position: relative;
-		padding-top: 33.33%;
-	}
-
-/* aspect-ratio 1/3 */
-
-.profile .header .header-image img {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			width: 100%;
-			height: 100%;
-			-o-object-fit: cover;
-			object-fit: cover;
-		}
-
-.profile .header {
-	--avatar-size: 8.5rem;
-	--name-size: 3rem;
-	--username-size: 2rem;
-
-	--overlap: calc(var(--avatar-size) - var(--name-size) - var(--username-size));
+.profile figure img.avatar {
+	margin: 0.5rem;
+	width: 5rem;
+	height: 5rem;
+	z-index: 2;
+	object-fit: fill;
+	border-radius: var(--br);
 }
 
-/*
-		Basic info container has the user's avatar, display- and username, and role
-		It's partially overlapped over the header image, by a negative margin-top
-	*/
-
-.profile .header .basic-info {
-		position: relative;
-		display: grid;
-		box-sizing: border-box;
-		grid-template-columns: var(--avatar-size) auto 1fr;
-		grid-template-rows: var(--overlap) var(--name-size) auto;
-		grid-template-areas:
-			" avatar  .            .            .     "
-			" avatar  displayname  displayname  stats "
-			" avatar  username     role         stats ";
-
-		margin: 1rem;
-		margin-top: calc(-1 * var(--overlap));
-		gap: 0 1rem;
-	}
-
-.profile .header .basic-info .avatar {
-			grid-area: avatar;
-			height: var(--avatar-size);
-			width: var(--avatar-size);
-			border: 0.2rem solid var(--avatar-border);
-			border-radius: var(--br);
-			overflow: hidden;
-		}
-
-/* prevents image extending beyond rounded borders */
-
-.profile .header .basic-info .avatar img {
-				height: 100%;
-				width: 100%;
-				-o-object-fit: cover;
-				object-fit: cover;
-			}
-
-.profile .header .basic-info .displayname {
-			grid-area: displayname;
-			line-height: var(--name-size);
-			font-size: 1.5rem;
-			font-weight: bold;
-		}
-
-.profile .header .basic-info .username {
-			min-width: 0;
-			grid-area: username;
-			line-height: var(--username-size);
-
-			font-size: 1rem;
-			font-weight: bold;
-			color: var(--fg-accent);
-			-webkit-user-select: all;
-			user-select: all;
-		}
-
-.profile .header .basic-info .role {
-			background: var(--bg);
-			color: var(--fg);
-
-			border: 0.1rem solid var(--bg);
-			grid-area: role;
-			align-self: center;
-			justify-self: start;
-			border-radius: var(--br);
-			padding: 0.25rem 0.5rem 0.35rem 0.5rem;
-			line-height: 0.75rem;
-			font-size: 0.75rem;
-			font-variant: small-caps;
-		}
-
-.profile .header .basic-info .role.admin {
-				color: var(--role-admin);
-				border-color: var(--role-admin);
-			}
-
-.profile .header .basic-info .role.moderator {
-				color: var(--role-mod);
-				border-color: var(--role-mod);
-			}
-
-@media screen and (max-width: 750px) {
-		.profile .header .basic-info {
-			grid-template-columns: auto 1fr;
-			grid-template-rows: var(--avatar-size) var(--name-size) auto;
-			grid-template-areas:
-				" avatar       avatar      "
-				" displayname  displayname "
-				" username     role        "
-				" stats        stats       ";
-		}
-
-			.profile .header .basic-info .displayname {
-				font-size: 1.4rem;
-			}
+.profile .header .user {
+	background: var(--profile-bg);
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	padding: 1rem;
 }
 
-.profile .col-header h1, .profile .col-header h2 {
-		font-size: 1.2rem;
-		line-height: 1.3rem;
-		margin: 0;
-	}
+.profile .header .displayname {
+	line-height: 1.25rem;
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.profile .header .username {
+	min-width: 0;
+	font-size: 1rem;
+	color: var(--fg-accent);
+	-webkit-user-select: all;
+	user-select: all;
+}
+
+.profile .header .role {
+	background: var(--bg);
+	color: var(--fg);
+
+	border: 0.075rem solid var(--bg);
+	border-radius: 0.25rem;
+	margin: 0.5rem;
+	padding: 0.25rem;
+	z-index: 2;
+	line-height: 0.75em;
+	font-size: 0.75rem;
+	font-variant: small-caps;
+  align-self: flex-start;
+}
+
+.profile .header .role.admin {
+	color: var(--role-admin);
+	border-color: var(--role-admin);
+}
+
+.profile .header .role.moderator {
+	color: var(--role-mod);
+	border-color: var(--role-mod);
+}
 
 .profile .toots {
 	flex: 65 25rem;
@@ -178,105 +113,82 @@
 }
 
 .profile .toots .col-header {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		gap: 1rem;
-	}
-
-.profile .toots .col-header a {
-			justify-self: end;
-		}
-
-.profile .rss-icon .fa {
-				font-size: 2rem;
-				-o-object-fit: contain;
-				object-fit: contain;
-				vertical-align: middle;
-				color: var(--orange2);
-				/* can't size a single-color background, so we use a linear-gradient that's effectively white */
-				background: linear-gradient(to right, var(--white1) 100%, transparent 0) no-repeat center center;
-				background-size: 1.2rem 1.4rem;
-			}
-
-.profile .toots .toot {
-		border-radius: var(--br);
-	}
-.toot .info {
-	  flex-direction: row;
-	  gap: 1rem;
-	}
-
-.profile .toots .backnextlinks {
-		display: flex;
-		justify-content: space-between;
-	}
-
-.profile .toots .backnextlinks .next {
-			margin-left: auto;
-		}
-
-.profile .about-user {
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: auto 1fr;
 	gap: 1rem;
 }
-.profile .about-user > * {
+
+.profile .toots .col-header a {
+	justify-self: end;
+}
+
+.profile .toots .toot {
+	border-radius: var(--br);
+}
+.toot .info {
+	flex-direction: row;
+	gap: 1rem;
+}
+.toot .info {
+	flex-direction: row;
+	gap: 1rem;
+}
+
+.profile .toots .backnextlinks {
+	display: flex;
+	justify-content: space-between;
+}
+
+.profile .toots .backnextlinks .next {
+	margin-left: auto;
+}
+
+.profile .col-header {
+	margin-bottom: -0.25rem;
+}
+
+
+.profile > * {
 	border-radius: var(--br);
 }
 
-.profile .about-user .col-header {
-		margin-bottom: -0.25rem;
-	}
+.profile .fields {
+	background: var(--profile-bg);
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	padding: 0.5rem;
+}
 
-.profile .about-user .fields {
-		background: var(--profile-bg);
-		display: grid;
-		grid-template-columns: auto auto;
-		padding: 0.5rem;
-	}
+.profile .fields > * {
+	padding: 0.5rem;
+}
+.profile .fields > b {
+	align-self: center;
+	justify-self: flex-end;
+	font-weight: 600;
+}
+.profile .fields > span + b,
+.profile .fields > time + b {
+	border-top: 0.1rem solid var(--gray2);
+	align-self: flex-start;
+	text-align: right;
+}
 
-.profile .about-user .fields > * {
-		padding: 0.5rem;
-	}
-.profile .about-user .fields > b {
-				align-self: center;
-				justify-self: flex-end;
-			}
-.profile .about-user .fields > span {
-			}
-.profile .about-user .fields > span + b {
-				border-top: 0.1rem solid var(--gray2);
-			}
+.profile .rss-icon,
+.profile .rss-icon img {
+	width: 20px;
+	height: 20px;
+}
 
-.profile .about-user .bio {
-		background: var(--profile-bg);
-		padding: 1rem;
-	}
+.profile .fields .flex,
+.profile .fields .flex * {
+	display: flex;
+	line-height: 1rem;
+	gap: 0.5rem;
+	align-items: center;
+}
 
-.profile .accountstats {
-		grid-area: stats;
-		display: grid;
-		grid-auto-flow: column;
-		grid-template: repeat(2, 1fr) / repeat(4, auto);
-		gap: 0 1rem;
-		align-self: center;
-	}
-
-.profile .accountstats > * {
-		padding: 0.5rem;
-		justify-self: center;
-	}
-
-.profile .accountstats > *,
-.profile .accountstats > * > * {
-		justify-content: center;
-		text-align: center;
-		display: flex;
-		gap: 0.25rem;
-		line-height: 20px;
-	}
-
-.profile .accountstats > b {
-	border-bottom: 0.1rem solid var(--gray2);
+.profile .bio {
+	background: var(--profile-bg);
+	padding: 1rem;
 }

@@ -2,7 +2,7 @@
 :root {
 	--white1: #fff;
 	--white2: #777;
-	--gray1: #111;
+	--gray1: #1c1c1c;
 	--gray2: #222;
 	--gray3: #333;
 	--gray4: #444;
@@ -13,16 +13,16 @@
 	--blue1: #3a9fde;
 	--blue2: #66befe;
 	--blue3: #82d8fd;
-	--error1: #860000;
-	--error2: #ff9796;
+	--error1: #ff5555;
+	--error2: #fddec6;
 	--error3: #dd2c2c;
 	--error-link: #01318C;
-	--green1: #94E749;
+	--green1: #baf39e;
 	--info-fg: var(--gray1);
 	--info-bg: #b3ddff;
 	--info-link: var(--error-link);
 	--fg: var(--white1);
-	--bg: var(--gray2);
+	--bg: var(--gray1);
 	--bg-trans: rgba(77, 78, 86, 0.62);
 	--bg-accent: var(--gray3);
 	--fg-accent: var(--blue3);
